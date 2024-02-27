@@ -13,7 +13,9 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 
 // ................................................for admin ........................................................
-
+app.get("/",(req,res)=>{
+    res.send("hello from backend!!!");
+})
 app.post("/admin", async (req, res) => {
     const { username, password } = req.body;
     const user = await admin.findOne({ username: username });
