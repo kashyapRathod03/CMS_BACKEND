@@ -7,7 +7,9 @@ const port = 5000;
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const path = require('path');
-app.use(cors("*"));
+app.use(cors({
+    origin:["http://localhost:3000","https://cms-ffd8.onrender.com/"]
+}));
 app.use('/uploads', express.static('uploads'))
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
