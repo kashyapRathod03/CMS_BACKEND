@@ -6,11 +6,16 @@ const { admin, Vcatagory, vendor } = require('./src/models/register');
 const port = 5000;
 const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
+const path = require('path');
 app.use(cors());
 app.use('/uploads', express.static('uploads'))
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
+app.use(express.static(path.join(__dirname,"./frontend/build")));
+app.get("*",(req,res)=>{
+    res.sendFile(path.join(__dirname,"./frontend/build/index.html"))
+});
 
 // ................................................for admin ........................................................
 app.get("/",(req,res)=>{

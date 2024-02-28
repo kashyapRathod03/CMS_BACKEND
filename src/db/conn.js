@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 
 mongoose.set('strictQuery',false);
-const db = mongoose.connect("mongodb+srv://kashyaprathod03:cms@cluster0.wctzuup.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/dashboard").then(()=>{console.log("database connection successfull")}).catch((err)=>{console.log(err)}); 
+const db = mongoose.connect("mongodb+srv://kashyaprathod03:cms@cluster0.wctzuup.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/dashboard").then(()=>{console.log("database connection successfull")}).catch((err)=>{console.log("this is error "+err)}); 
 
 module.exports = db
 
