@@ -19,7 +19,8 @@ app.get("*",(req,res)=>{
 
 // ................................................for admin ........................................................
 app.get("/",(req,res)=>{
-    res.send("hello from backend!!!");
+    // res.send("hello from backend!!!");
+    console.log("hello from backend!!!");
 })
 app.post("/admin", async (req, res) => {
     const { username, password } = req.body;
