@@ -31,7 +31,7 @@ app.post("/admin", async (req, res) => {
     const user = await admin.findOne({ username: username });
     const u_pass = await admin.findOne({ password: password });
     if (user && u_pass) {
-        res.send('true');
+        res.send('this is from backend');
     }
     else {
         res.send('false');
