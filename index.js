@@ -8,6 +8,7 @@ const multer = require('multer')
 const upload = multer({ dest: 'uploads/' })
 const path = require('path');
 app.use(cors({
+    // origin:["http://localhost:3000","https://cms-ffd8.onrender.com"],
     origin:["http://localhost:3000","https://cms-ffd8.onrender.com"],
     credentials: true
 }));
