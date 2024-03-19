@@ -22,9 +22,9 @@ app.get("*",(req,res)=>{
 });
 
 // ................................................for admin ........................................................
-app.get("/",(req,res)=>{
-    // res.send("hello from backend!!!");
-    console.log("hello from backend!!!");
+app.get("/",async(req,res)=>{
+    const d = await vendor.find({});
+    res.send(d);
 })
 app.post("/admin", async (req, res) => {
     const { username, password } = req.body;
